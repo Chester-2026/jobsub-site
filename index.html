@@ -3,100 +3,156 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JobSub — Real-time job posting alerts</title>
-<meta name="description" content="JobSub monitors company career pages and emails you within minutes when a matching role is posted. Invitation only.">
-<style>
-  :root { --fg:#1a1a1a; --muted:#666; --line:#e5e5e5; --accent:#1f5fd0; }
-  * { box-sizing: border-box; }
-  body {
-    margin:0 auto; padding:3rem 1.25rem 5rem; max-width:44rem;
-    font:16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    color:var(--fg); background:#fff;
-  }
-  h1 { font-size:2rem; margin:0 0 .4rem; letter-spacing:-.02em; }
-  h2 { font-size:1.15rem; margin:2.5rem 0 .75rem; }
-  .tagline { color:var(--muted); font-size:1.05rem; margin:0 0 2.5rem; }
-  a { color:var(--accent); }
-  ul { padding-left:1.25rem; }
-  li { margin:.35rem 0; }
-  .box { border:1px solid var(--line); border-radius:8px; padding:1rem 1.25rem; margin:1.25rem 0; }
-  .box strong { display:block; margin-bottom:.35rem; }
-  code { background:#f5f5f5; padding:.1rem .35rem; border-radius:3px; font-size:.9em; }
-  footer { margin-top:4rem; padding-top:1.5rem; border-top:1px solid var(--line); color:var(--muted); font-size:.9rem; }
-  footer a { color:var(--muted); }
-</style>
+<title>JobSub — High-tier jobs, five minutes after they post</title>
+<meta name="description" content="JobSub watches high-tier company career pages and emails matching roles within five minutes. Built for people in Canada. Invitation only.">
+<link rel="canonical" href="https://jobsub.app/">
+<meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://jobsub.app/">
+<meta property="og:title" content="JobSub — High-tier jobs, five minutes after they post">
+<meta property="og:description" content="JobSub watches high-tier company career pages and emails matching roles within five minutes. Built for people in Canada. Invitation only.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JobSub — High-tier jobs, five minutes after they post">
+<meta name="twitter:description" content="JobSub watches high-tier company career pages and emails matching roles within five minutes. Built for people in Canada. Invitation only.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+<header class="wrap site-header">
+  <a class="wordmark" href="/">JobSub</a>
+  <nav class="nav" aria-label="Primary">
+    <a href="#companies">Companies</a>
+    <a href="/privacy.html">Privacy</a>
+    <a class="nav-strong" href="https://forms.gle/Q8uTbuUxDMbnNhYF9" target="_blank" rel="noopener noreferrer">Preference form</a>
+  </nav>
+</header>
 
-<h1>JobSub</h1>
-<p class="tagline">Get an email within minutes of a job being posted — not days later.</p>
+<main>
+  <div class="wrap hero">
+    <h1>Within five minutes of the posting.</h1>
+    <p class="lede">JobSub watches high-tier career pages and emails you when a matching role goes live. Built for people in Canada.</p>
+  </div>
 
-<h2>What it does</h2>
-<p>
-  JobSub monitors the career pages of a curated list of companies. When a company
-  publishes a new role that matches a subscriber's stated preferences, JobSub sends
-  that subscriber a single email — typically within 10 minutes of the posting going live.
-</p>
-<p>
-  It only looks at <strong>publicly accessible</strong> job listing pages, and it only
-  reports <strong>newly published roles</strong>.
-</p>
+  <section id="companies" class="wrap band" aria-labelledby="companies-title">
+    <p class="kicker" id="companies-title">Companies we watch</p>
+    <h2>See if the company is on the list.</h2>
+    <p class="prose">A short, curated set. Not a job board — if they are here, we read their career page ourselves.</p>
 
-<h2>What it deliberately does not do</h2>
-<ul>
-  <li>No auto-apply — JobSub never submits an application on your behalf</li>
-  <li>No resume tailoring or cover-letter generation</li>
-  <li>No resume upload; JobSub never asks for or stores your resume</li>
-  <li>No job board, no recruiter marketplace, no marketing email of any kind</li>
-</ul>
+    <form id="company-filter" hidden role="search">
+      <label class="sr-only" for="company-search">Search companies</label>
+      <input
+        id="company-search"
+        type="search"
+        placeholder="Stripe, Hopper, Figma…"
+        autocomplete="off"
+        spellcheck="false"
+        enterkeyhint="search"
+        aria-controls="company-list"
+        aria-describedby="company-status">
+    </form>
+    <p id="company-status" role="status" aria-live="polite">10 companies</p>
 
-<h2>Who can subscribe</h2>
-<p>
-  JobSub is <strong>invitation only</strong> and operated by a single person as a
-  personal project. There is no open signup. Subscribing requires a subscription key
-  issued directly by the operator, and every new address must confirm by clicking a
-  link in a confirmation email before any alert is ever sent.
-</p>
+    <ul id="company-list">
+      <li>Affirm</li>
+      <li>Asana</li>
+      <li>Brex</li>
+      <li>Chime</li>
+      <li>Coinbase</li>
+      <li>Figma</li>
+      <li>Hopper</li>
+      <li>Quora</li>
+      <li>StackAdapt</li>
+      <li>Stripe</li>
+    </ul>
 
-<div class="box">
-  <strong>Have a subscription key?</strong>
-  Submit or update your preferences here:
-  <a href="https://forms.gle/Q8uTbuUxDMbnNhYF9" rel="noopener">JobSub preference form</a>.
-  Re-submitting the same form at any time replaces your previous preferences.
-</div>
+    <div id="company-empty" hidden>
+      <p>We don’t watch <span id="company-empty-query"></span> yet.</p>
+      <p>If it’s a company you would actually join, write
+        <a id="company-empty-mail" href="mailto:hello@jobsub.app">hello@jobsub.app</a>.
+        We add the ones that belong here.</p>
+    </div>
 
-<div class="box">
-  <strong>Want to stop receiving emails?</strong>
-  Every JobSub email contains a one-click unsubscribe link in its footer that requires
-  no login. Unsubscribes take effect immediately. You can also email
-  <a href="mailto:hello@jobsub.app">hello@jobsub.app</a> and your address and
-  preferences will be deleted.
-</div>
+    <p class="hint">Missing someone worth watching? Write <a href="mailto:hello@jobsub.app">hello@jobsub.app</a> — we add the ones that belong here.</p>
+  </section>
 
-<h2>Email practices</h2>
-<ul>
-  <li>Addresses are never purchased, scraped, rented, sold, or shared</li>
-  <li>Double opt-in is required before the first alert</li>
-  <li>Every message includes a working one-click unsubscribe link and
-      <code>List-Unsubscribe</code> headers</li>
-  <li>Hard bounces and complaints permanently suppress the address, with no retries</li>
-  <li>Mail is sent from <code>jobsub.app</code>, authenticated with SPF, DKIM, and DMARC</li>
-</ul>
+  <section class="wrap band" aria-labelledby="alert-title">
+    <p class="kicker" id="alert-title">What arrives</p>
+    <h2>One email. The new role. A link to their page.</h2>
+    <p class="prose">An example of the alert — not a live posting.</p>
 
-<h2>Contact</h2>
-<p>
-  Operated by JobSub. Questions, problems, or removal requests:
-  <a href="mailto:hello@jobsub.app">hello@jobsub.app</a>.
-  Abuse reports: <a href="mailto:abuse@jobsub.app">abuse@jobsub.app</a>.
-</p>
+    <div class="specimen-stage">
+      <article class="mail" aria-label="Example JobSub alert">
+        <p class="mail-subject">Subject: <strong>Staff Software Engineer — Stripe</strong></p>
+        <p class="kicker">JobSub</p>
+        <h3>Staff Software Engineer</h3>
+        <p class="company">Stripe</p>
+        <p class="latency">Found 4 minutes after it was posted</p>
+        <hr class="mail-rule">
+        <table class="facts">
+          <tr><th scope="row">Role</th><td>Software Engineering</td></tr>
+          <tr><th scope="row">Level</th><td>Staff</td></tr>
+          <tr><th scope="row">Location</th><td>Canada (Toronto)</td></tr>
+        </table>
+        <p class="kicker kicker-tight">Your keywords in this posting</p>
+        <div class="chips">
+          <span class="chip">distributed systems</span>
+          <span class="chip">Go</span>
+        </div>
+        <hr class="mail-rule">
+        <span class="cta" aria-disabled="true">View the posting</span>
+      </article>
+    </div>
+  </section>
 
-<footer>
-  <a href="/privacy.html">Privacy Policy</a> &nbsp;·&nbsp;
-  <a href="mailto:hello@jobsub.app">hello@jobsub.app</a>
-  <br><br>
-  JobSub is an independent personal project and is not affiliated with,
-  endorsed by, or partnered with any company whose job postings it monitors.
+  <section class="wrap wrap-narrow band" aria-labelledby="how-title">
+    <p class="kicker" id="how-title">How it works</p>
+    <h2>Public pages. New roles only.</h2>
+    <p class="prose">
+      We check each company’s career page on a five-minute cycle. When a role appears
+      that matches what you asked for — title, seniority, Canada or the US — you get
+      a single email. Nothing from the back catalogue. Nothing you did not ask for.
+    </p>
+    <p class="prose">
+      JobSub is invitation only. You need a subscription key, then a confirmation
+      tap on a link we send you, before any alert goes out.
+    </p>
+  </section>
+
+  <section class="wrap wrap-narrow band" aria-labelledby="not-title">
+    <p class="kicker" id="not-title">What it is not</p>
+    <h2>No auto-apply. No resume. No board.</h2>
+    <ul class="limits prose">
+      <li>We never submit an application for you</li>
+      <li>We do not write resumes or cover letters, and we never ask for one</li>
+      <li>We are not a job board, a recruiter marketplace, or a marketing list</li>
+    </ul>
+  </section>
+
+  <section class="wrap wrap-narrow band" aria-labelledby="join-title">
+    <p class="kicker" id="join-title">Subscribe</p>
+    <h2>Have a key? Set your preferences.</h2>
+    <p class="prose">
+      Re-submitting the form replaces what we have. Every mail includes a one-click
+      unsubscribe. To have your address deleted, write
+      <a href="mailto:hello@jobsub.app">hello@jobsub.app</a>.
+    </p>
+    <div class="actions">
+      <a class="cta" href="https://forms.gle/Q8uTbuUxDMbnNhYF9" target="_blank" rel="noopener noreferrer">Open the preference form</a>
+    </div>
+    <p class="fine">No key yet? JobSub is invitation only — there is no open signup.</p>
+  </section>
+</main>
+
+<footer class="wrap site-footer">
+  <nav aria-label="Footer">
+    <a href="/privacy.html">Privacy</a>
+    <a href="mailto:hello@jobsub.app">hello@jobsub.app</a>
+    <a href="mailto:abuse@jobsub.app">abuse@jobsub.app</a>
+  </nav>
+  <p>JobSub is an independent personal project and is not affiliated with, endorsed by, or partnered with any company whose job postings it monitors.</p>
 </footer>
 
+<script src="/app.js" defer></script>
 </body>
 </html>
