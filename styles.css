@@ -173,11 +173,21 @@ h2 {
 
 .lede {
   margin: 1rem 0 0;
-  max-width: 22rem;
+  max-width: 26rem;
   font-size: 1.15rem;
   line-height: 1.4;
   color: var(--soft);
   text-wrap: pretty;
+}
+
+.audience {
+  margin: 0.35rem 0 0;
+  max-width: 26rem;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
 }
 
 p { margin: 0 0 0.9rem; }
@@ -189,23 +199,13 @@ p:last-child { margin-bottom: 0; }
 /* ----- hero ----- */
 
 .hero {
-  position: relative;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(7rem, 0.42fr);
-  align-items: end;
-  gap: 1rem;
   padding: 3.25rem 0 2.25rem;
 }
 
-.hero-five {
-  justify-self: end;
-  font-size: clamp(8.5rem, 22vw, 15rem);
-  font-weight: 600;
-  line-height: 0.74;
-  letter-spacing: -0.07em;
+.hero-num {
   color: var(--signal);
-  user-select: none;
-  pointer-events: none;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
 }
 
 /* ----- flow ----- */
@@ -586,19 +586,7 @@ a.cta:focus-visible { outline-offset: 3px; }
 @media (max-width: 40rem) {
   body { font-size: 16px; }
 
-  .hero {
-    min-height: 14rem;
-    padding-top: 2.4rem;
-    display: block;
-  }
-
-  .hero-five {
-    position: absolute;
-    right: -0.12em;
-    bottom: -0.08em;
-    opacity: 0.22;
-    font-size: 11rem;
-  }
+  .hero { padding-top: 2.4rem; }
 
   .mail { padding: 1.6rem 1.35rem 1.45rem; }
 

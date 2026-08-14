@@ -17,7 +17,7 @@ Only list companies that are actually being watched. Do not list disabled boards
 
 - Invitation only. No open signup, no waitlist collector on this host.
 - Alerts within five minutes of a new posting (5-minute crawl).
-- High-tier companies; positioned for people in Canada. Matching still allows the US.
+- High-tier companies; positioned for Canada/US tech people.
 - No auto-apply, no resume, no job board.
 - Operator is “JobSub” — no personal name.
 - Do not name the email vendor.
