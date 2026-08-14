@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>JobSub — High-tier jobs, five minutes after they post</title>
-<meta name="description" content="JobSub watches high-tier company career pages and emails matching roles within five minutes. Built for people in Canada. Invitation only.">
+<meta name="description" content="JobSub watches high-tier company career pages and emails matching roles within five minutes. For people in Canada. Invitation only.">
 <link rel="canonical" href="https://jobsub.app/">
-<meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f0e8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14110e" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://jobsub.app/">
 <meta property="og:title" content="JobSub — High-tier jobs, five minutes after they post">
-<meta property="og:description" content="JobSub watches high-tier company career pages and emails matching roles within five minutes. Built for people in Canada. Invitation only.">
+<meta property="og:description" content="JobSub watches high-tier company career pages and emails matching roles within five minutes. For people in Canada. Invitation only.">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JobSub — High-tier jobs, five minutes after they post">
-<meta name="twitter:description" content="JobSub watches high-tier company career pages and emails matching roles within five minutes. Built for people in Canada. Invitation only.">
+<meta name="twitter:description" content="JobSub watches high-tier company career pages and emails matching roles within five minutes. For people in Canada. Invitation only.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/styles.css">
 </head>
@@ -30,14 +30,41 @@
 
 <main>
   <div class="wrap hero">
-    <h1>Within five minutes of the posting.</h1>
-    <p class="lede">JobSub watches high-tier career pages and emails you when a matching role goes live. Built for people in Canada.</p>
+    <div class="hero-copy">
+      <h1>Five minutes.</h1>
+      <p class="lede">High-tier jobs, emailed within five minutes. For people in Canada.</p>
+    </div>
+    <div class="hero-five" aria-hidden="true">5</div>
   </div>
 
+  <ol class="wrap flow" aria-label="How an alert is made">
+    <li>
+      <span class="flow-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28">
+          <rect x="5" y="7" width="22" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M9 12h14M9 16h9" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span>Their career page</span>
+    </li>
+    <li class="flow-now">
+      <span class="flow-mark" aria-hidden="true">5</span>
+      <span>Minutes later</span>
+    </li>
+    <li>
+      <span class="flow-mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="28" height="28">
+          <rect x="5" y="9" width="22" height="15" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M7 11.2 16 18l9-6.8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span>Your inbox</span>
+    </li>
+  </ol>
+
   <section id="companies" class="wrap band" aria-labelledby="companies-title">
-    <p class="kicker" id="companies-title">Companies we watch</p>
-    <h2>See if the company is on the list.</h2>
-    <p class="prose">A short, curated set. Not a job board — if they are here, we read their career page ourselves.</p>
+    <p class="kicker" id="companies-title">Who we watch</p>
+    <h2>Look up a company.</h2>
 
     <form id="company-filter" hidden role="search">
       <label class="sr-only" for="company-search">Search companies</label>
@@ -68,20 +95,18 @@
 
     <div id="company-empty" hidden>
       <p>We don’t watch <span id="company-empty-query"></span> yet.</p>
-      <p>If it’s a company you would actually join, write
+      <p>If you would actually join them, ask
         <a id="company-empty-mail" href="mailto:hello@jobsub.app">hello@jobsub.app</a>.
         We add the ones that belong here.</p>
     </div>
 
-    <p class="hint">Missing someone worth watching? Write <a href="mailto:hello@jobsub.app">hello@jobsub.app</a> — we add the ones that belong here.</p>
+    <p class="hint">Want someone added? <a href="mailto:hello@jobsub.app">hello@jobsub.app</a></p>
   </section>
 
-  <section class="wrap band" aria-labelledby="alert-title">
-    <p class="kicker" id="alert-title">What arrives</p>
-    <h2>One email. The new role. A link to their page.</h2>
-    <p class="prose">An example of the alert — not a live posting.</p>
-
-    <div class="specimen-stage">
+  <section class="stage-band" aria-labelledby="alert-title">
+    <div class="wrap">
+      <p class="kicker on-stage" id="alert-title">What arrives</p>
+      <h2 class="on-stage">One email. Their posting.</h2>
       <article class="mail" aria-label="Example JobSub alert">
         <p class="mail-subject">Subject: <strong>Staff Software Engineer — Stripe</strong></p>
         <p class="kicker">JobSub</p>
@@ -105,42 +130,31 @@
     </div>
   </section>
 
-  <section class="wrap wrap-narrow band" aria-labelledby="how-title">
-    <p class="kicker" id="how-title">How it works</p>
-    <h2>Public pages. New roles only.</h2>
-    <p class="prose">
-      We check each company’s career page on a five-minute cycle. When a role appears
-      that matches what you asked for — title, seniority, Canada or the US — you get
-      a single email. Nothing from the back catalogue. Nothing you did not ask for.
-    </p>
-    <p class="prose">
-      JobSub is invitation only. You need a subscription key, then a confirmation
-      tap on a link we send you, before any alert goes out.
-    </p>
-  </section>
-
-  <section class="wrap wrap-narrow band" aria-labelledby="not-title">
-    <p class="kicker" id="not-title">What it is not</p>
-    <h2>No auto-apply. No resume. No board.</h2>
-    <ul class="limits prose">
-      <li>We never submit an application for you</li>
-      <li>We do not write resumes or cover letters, and we never ask for one</li>
-      <li>We are not a job board, a recruiter marketplace, or a marketing list</li>
+  <section class="wrap band rules" aria-labelledby="rules-title">
+    <h2 class="sr-only" id="rules-title">The rules</h2>
+    <ul class="rules-list">
+      <li>
+        <strong>Public pages</strong>
+        New roles only. Nothing from the back catalogue.
+      </li>
+      <li>
+        <strong>Invitation only</strong>
+        A key, then a confirmation tap. No open signup.
+      </li>
+      <li>
+        <strong>Never</strong>
+        No auto-apply. No resume. No job board.
+      </li>
     </ul>
   </section>
 
-  <section class="wrap wrap-narrow band" aria-labelledby="join-title">
+  <section class="wrap wrap-narrow band join" id="join" aria-labelledby="join-title">
     <p class="kicker" id="join-title">Subscribe</p>
-    <h2>Have a key? Set your preferences.</h2>
-    <p class="prose">
-      Re-submitting the form replaces what we have. Every mail includes a one-click
-      unsubscribe. To have your address deleted, write
-      <a href="mailto:hello@jobsub.app">hello@jobsub.app</a>.
-    </p>
+    <h2>Have a key?</h2>
     <div class="actions">
       <a class="cta" href="https://forms.gle/Q8uTbuUxDMbnNhYF9" target="_blank" rel="noopener noreferrer">Open the preference form</a>
     </div>
-    <p class="fine">No key yet? JobSub is invitation only — there is no open signup.</p>
+    <p class="fine">Re-submit anytime to replace your preferences.</p>
   </section>
 </main>
 
