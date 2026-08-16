@@ -12,7 +12,7 @@ The public list is maintained **here**, by hand — not fetched from watcher.
 2. Edit the same names in the `<ul id="company-list">` in `index.html` (no-JS fallback).
 3. Set the no-JS count in `#company-status` (`N companies`). `app.js` overwrites it after fetch.
 
-List the public display name, not the watcher `company_id`. DoorDash is two watcher boards (`doordash`, `doordash-canada`) and one name. Do not list disabled boards (Circle is in watcher, not here). Adding a name on this site does not start a crawl.
+List the public display name, not the watcher `company_id`. DoorDash is two watcher boards (`doordash`, `doordash-canada`) and one name. LayerZero Labs is listed under its full name here; watcher's `display_name` is `LayerZero`. That difference is deliberate — do not "fix" it. Do not list a company whose board is disabled in watcher. Adding a name on this site does not start a crawl.
 
 ## Signup
 
