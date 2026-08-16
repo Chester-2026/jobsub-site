@@ -322,6 +322,47 @@ p:last-child { margin-bottom: 0; }
   letter-spacing: -0.02em;
 }
 
+/* Sits in the chip row; stretches to whatever height the chips are. */
+#company-list li.company-more {
+  display: flex;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+#company-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 1.05rem;
+  border: 1px dashed var(--chip);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+#company-toggle[hidden] { display: none; }
+
+#company-toggle:hover {
+  color: var(--signal);
+  border-color: var(--signal);
+}
+
+.company-toggle-mark {
+  transition: transform 0.15s ease;
+}
+
+#company-toggle[aria-expanded="true"] .company-toggle-mark {
+  transform: rotate(180deg);
+}
+
 #company-empty {
   margin-top: 1.4rem;
   max-width: 28rem;

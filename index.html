@@ -69,30 +69,34 @@
       <input
         id="company-search"
         type="search"
-        placeholder="Stripe, Hopper, Figma…"
+        placeholder="Enter company name here…"
         autocomplete="off"
         spellcheck="false"
         enterkeyhint="search"
         aria-controls="company-list"
         aria-describedby="company-status">
     </form>
-    <p id="company-status" role="status" aria-live="polite">22 companies</p>
+    <p id="company-status" role="status" aria-live="polite">27 companies</p>
 
     <ul id="company-list">
+      <li>Activision</li>
       <li>Affirm</li>
       <li>Asana</li>
       <li>Block</li>
       <li>Brex</li>
       <li>Chime</li>
       <li>Circle</li>
+      <li>Clio</li>
       <li>Coinbase</li>
       <li>Coursera</li>
       <li>Dialpad</li>
       <li>DoorDash</li>
       <li>Dropbox</li>
       <li>Figma</li>
+      <li>GoDaddy</li>
       <li>Hopper</li>
       <li>Instacart</li>
+      <li>Klue</li>
       <li>LayerZero Labs</li>
       <li>Okta</li>
       <li>Pinterest</li>
@@ -101,7 +105,15 @@
       <li>StackAdapt</li>
       <li>Stripe</li>
       <li>Uber</li>
+      <li>Yelp</li>
     </ul>
+
+    <button id="company-toggle" type="button" hidden aria-expanded="false" aria-controls="company-list">
+      <span id="company-toggle-label">Show all</span>
+      <svg class="company-toggle-mark" viewBox="0 0 16 16" width="12" height="12" aria-hidden="true">
+        <path d="M3.5 6 8 10.5 12.5 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
 
     <div id="company-empty" hidden>
       <p>We don’t watch <span id="company-empty-query"></span> yet.</p>
