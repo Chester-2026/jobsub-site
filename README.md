@@ -19,6 +19,8 @@ Two names here differ from watcher's `display_name` on purpose — do not "fix" 
 - LayerZero Labs is listed under its full name; watcher says `LayerZero`.
 - Borealis AI is the name readers recognize; watcher says `RBC Borealis` (board `rbc-borealis`, RBC's Workday filtered to `Borealis`).
 
+Both divergences are visible to subscribers: the alert email carries watcher's `display_name` (watcher → `company_name` on the queue message → engine's subject line), so a role from that board arrives as "… — RBC Borealis" while this page says Borealis AI. Accepted trade-off, not a bug. Renaming on this page cannot change the email; only watcher can.
+
 Do not list a company whose board is disabled in watcher. Adding a name on this site does not start a crawl.
 
 ## Collapsed list
