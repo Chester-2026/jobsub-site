@@ -1,13 +1,17 @@
 [
+  "1Password",
   "Activision",
   "Affirm",
   "Asana",
   "Block",
+  "Borealis AI",
   "Brex",
   "Chime",
   "Circle",
   "Clio",
+  "Cohere",
   "Coinbase",
+  "Confluent",
   "Coursera",
   "Dialpad",
   "DoorDash",
@@ -25,5 +29,6 @@
   "StackAdapt",
   "Stripe",
   "Uber",
+  "Unity",
   "Yelp"
 ]
