@@ -21,6 +21,8 @@ Two names here differ from watcher's `display_name` on purpose — do not "fix" 
 
 Both divergences are visible to subscribers: the alert email carries watcher's `display_name` (watcher → `company_name` on the queue message → engine's subject line), so a role from that board arrives as "… — RBC Borealis" while this page says Borealis AI. Accepted trade-off, not a bug. Renaming on this page cannot change the email; only watcher can.
 
+Every other name matches watcher's `display_name` exactly — including `Layer 6`, whose space is watcher's and the lab's own. Do not close it up to "Layer6": that would make a third divergence, silently.
+
 Do not list a company whose board is disabled in watcher. Adding a name on this site does not start a crawl.
 
 ## Collapsed list
@@ -32,7 +34,7 @@ Two things that look like tidy-ups but are load-bearing:
 - `#company-toggle` lives **outside** the `<ul>` in markup, `hidden`, and `app.js` moves it into an `<li class="company-more">` at the end of the row. It must stay outside: `readInitial()` reads every `<li>` in the markup as a company name, so a button parked inside the `<ul>` would register "Show all" as a company.
 - Searching always filters the full list and drops the toggle from the row. Collapsing applies only at rest — otherwise search would silently miss the companies that aren't featured.
 
-The button is dashed, not solid, so it doesn't read as a 28th company chip while sharing the row. Its height comes from flex stretch, not fixed padding, so it stays aligned if the chips change.
+The button is dashed, not solid, so it doesn't read as one more company chip while sharing the row. Its height comes from flex stretch, not fixed padding, so it stays aligned if the chips change.
 
 ## Signup
 
