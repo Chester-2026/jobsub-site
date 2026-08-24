@@ -21,7 +21,7 @@ Two names here differ from watcher's `display_name` on purpose — do not "fix" 
 
 Both divergences are visible to subscribers: the alert email carries watcher's `display_name` (watcher → `company_name` on the queue message → engine's subject line), so a role from that board arrives as "… — RBC Borealis" while this page says Borealis AI. Accepted trade-off, not a bug. Renaming on this page cannot change the email; only watcher can.
 
-Every other name matches watcher's `display_name` exactly — including two that read like typos and are not: `Layer 6`, whose space is watcher's and the lab's own, and `Grafana Labs`, which is the `grafana` board's full `display_name`. Do not close up "Layer6" or shorten "Grafana": either would make a third divergence, silently.
+Every other name matches watcher's `display_name` exactly — including three that read like typos and are not: `Layer 6`, whose space is watcher's and the lab's own; `Grafana Labs`, which is the `grafana` board's full `display_name`; and `Tripadvisor`, whose lowercase "a" is watcher's and the company's own branding. Do not close up "Layer6", shorten "Grafana", or camel-case "TripAdvisor": each would make another divergence, silently.
 
 Do not list a company whose board is disabled in watcher. Adding a name on this site does not start a crawl.
 
