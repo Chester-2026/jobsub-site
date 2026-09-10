@@ -149,16 +149,6 @@ a:hover { color: var(--signal); }
   .site-header { background: var(--page); }
 }
 
-.site-header::after {
-  content: "";
-  position: absolute;
-  inset: auto 50% -1px;
-  width: 100vw;
-  height: 1px;
-  transform: translateX(50%);
-  background: var(--rule);
-}
-
 .wordmark {
   font-size: 1.05rem;
   font-weight: 600;
