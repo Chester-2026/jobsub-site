@@ -26,23 +26,23 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --page: #0b1220;
-    --card: #131c2e;
+    --page: #141d31;
+    --card: #1e2942;
     --ink: #e8eef6;
-    --soft: #b6c4d4;
-    --muted: #8598ac;
-    --rule: #263449;
-    --chip: #33455e;
+    --soft: #b8c6d8;
+    --muted: #8b9cb2;
+    --rule: #2e3c56;
+    --chip: #3d4d6b;
     --cta: #e8eef6;
-    --cta-ink: #0b1220;
+    --cta-ink: #141d31;
     --ring: #38bdf8;
     --signal: #38bdf8;
-    --on-signal: #082032;
+    --on-signal: #0a1526;
     --sky: #38bdf8;
-    --signal-soft: #0c2a3f;
-    --stage: #071426;
+    --signal-soft: #16354f;
+    --stage: #080f1e;
     --stage-ink: #eaf3fb;
-    --stage-muted: #8ea6bd;
+    --stage-muted: #93aac1;
     --good: #34d399;
   }
 
@@ -645,51 +645,68 @@ a.cta:focus-visible { outline-offset: 3px; }
 /* ----- promises ----- */
 
 .promises {
-  list-style: none;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.6rem 2rem;
+  gap: 2rem 2.25rem;
   margin: 2rem 0 0;
-  padding: 0;
 }
 
-.promises > li {
-  display: grid;
-  grid-template-columns: 1.45rem 1fr;
-  gap: 0.15rem 0.7rem;
-  color: var(--soft);
-  font-size: 0.95rem;
+.promise-head {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .promise-mark {
   display: grid;
   place-items: center;
+  flex: none;
   width: 1.45rem;
   height: 1.45rem;
-  margin-top: 0.1rem;
   border-radius: 50%;
 }
 
-.promises .is-yes .promise-mark {
+.is-yes .promise-mark {
   background: color-mix(in srgb, var(--good) 16%, transparent);
   color: var(--good);
 }
 
-.promises .is-no .promise-mark {
+.is-no .promise-mark {
   background: color-mix(in srgb, var(--muted) 18%, transparent);
   color: var(--muted);
 }
 
-.promises strong {
+.promise-col ul {
+  list-style: none;
+  display: grid;
+  gap: 1.3rem;
+  margin: 1.15rem 0 0;
+  padding: 0;
+}
+
+.promise-col li {
+  margin: 0;
+  color: var(--soft);
+  font-size: 0.95rem;
+}
+
+.promise-col strong {
+  display: block;
+  margin-bottom: 0.2rem;
   color: var(--ink);
   font-size: 1.02rem;
   font-weight: 600;
   letter-spacing: -0.02em;
 }
 
-.promises > li > span:last-child { grid-column: 2; }
-
-.promises a { color: var(--soft); }
+.promise-col a { color: var(--soft); }
 
 /* ----- join ----- */
 
