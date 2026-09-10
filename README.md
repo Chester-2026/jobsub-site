@@ -47,7 +47,9 @@ the bottom of the page to find a way to sign up.
 
 1. **Hero** — `<h1>` states the outcome; "five minutes" moved down into the lede where it reads as
    proof rather than as the hook. Two CTAs sit above the fold: the form for people holding a key,
-   and a `mailto:` for people who need one.
+   and a `mailto:` for people who need one. The `.proof` strip under them is the only place on the
+   page carrying the Canada/US audience line, so do not thin it out without putting that claim back
+   somewhere visible — an earlier draft held it in a pill above the `<h1>` and that pill was cut.
 2. **Email specimen** — moved up from fifth place. It is the fastest way to show what the product is.
 3. **How it works** — the reader's three steps (get a key, fill the form, confirm), not the crawler's
    pipeline. The old career-page → 5 min → inbox diagram described the machine, and restated
@@ -80,6 +82,24 @@ Homepage wording can change; these claims about the service must stay true.
 - Independent, not-for-profit research project — not a registered nonprofit. Open to sponsorships.
 - Operator is “JobSub” — no personal name.
 - Do not name the email vendor.
+
+## Colour
+
+The palette is the conventional sky-blue frontend system: a faintly blue-tinted page (`#f6f9fc`),
+slate ink and rules, and a single blue accent. Two tokens are easy to get wrong:
+
+- `--signal` is the *interactive* blue and is used as text (`.latency`, hover states), so it is
+  sky-700 rather than a lighter sky — a lighter one fails contrast on the page background.
+  `--sky` is the lighter shade and is decorative only: it tints the radial wash behind the hero.
+- `--on-signal` is whatever text sits **on** `--signal`, and it flips with the theme — white in
+  light mode, near-black navy in dark, because the dark accent is a bright sky. Never hardcode a
+  text colour on an accent fill; that was the previous bug, a fixed cream that only worked warm.
+
+`--good` stays green for the "yes" marks in the promises list. Green/grey reads as yes/no faster
+than one accent used for both.
+
+Contrast was checked for every foreground/background pair in both themes; the tightest is
+`--muted` on `--page`. If you lighten `--muted`, re-check it — slate-500 landed at exactly 4.50.
 
 ## Privacy
 

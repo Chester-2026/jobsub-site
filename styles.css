@@ -1,21 +1,23 @@
 :root {
   color-scheme: light dark;
-  --page: #f6f0e8;
-  --card: #fffaf3;
-  --ink: #1c1916;
-  --soft: #4a433c;
-  --muted: #7a7168;
-  --rule: #e0d5c6;
-  --chip: #d8ccbc;
-  --cta: #1c1916;
-  --cta-ink: #fffaf3;
-  --ring: #d4531c;
-  --signal: #d4531c;
-  --signal-soft: #f3d2c2;
-  --stage: #24352d;
-  --stage-ink: #f4efe6;
-  --stage-muted: #b7c4bb;
-  --good: #2f6b4f;
+  --page: #f6f9fc;
+  --card: #ffffff;
+  --ink: #0f172a;
+  --soft: #475569;
+  --muted: #5c6b80;
+  --rule: #e2e8f0;
+  --chip: #cbd5e1;
+  --cta: #0f172a;
+  --cta-ink: #ffffff;
+  --ring: #0284c7;
+  --signal: #0369a1;
+  --on-signal: #ffffff;
+  --sky: #38bdf8;
+  --signal-soft: #e0f2fe;
+  --stage: #0f2740;
+  --stage-ink: #eef6fc;
+  --stage-muted: #9db8cf;
+  --good: #047857;
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --measure: 40rem;
   --wide: 52rem;
@@ -24,22 +26,24 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --page: #14110e;
-    --card: #1e1a16;
-    --ink: #f4efe8;
-    --soft: #c9c0b5;
-    --muted: #9a9086;
-    --rule: #3a332c;
-    --chip: #4a4036;
-    --cta: #f4efe8;
-    --cta-ink: #1c1916;
-    --ring: #e86a32;
-    --signal: #e86a32;
-    --signal-soft: #4a2618;
-    --stage: #1a2822;
-    --stage-ink: #f4efe6;
-    --stage-muted: #9aada1;
-    --good: #6bbf92;
+    --page: #0b1220;
+    --card: #131c2e;
+    --ink: #e8eef6;
+    --soft: #b6c4d4;
+    --muted: #8598ac;
+    --rule: #263449;
+    --chip: #33455e;
+    --cta: #e8eef6;
+    --cta-ink: #0b1220;
+    --ring: #38bdf8;
+    --signal: #38bdf8;
+    --on-signal: #082032;
+    --sky: #38bdf8;
+    --signal-soft: #0c2a3f;
+    --stage: #071426;
+    --stage-ink: #eaf3fb;
+    --stage-muted: #8ea6bd;
+    --good: #34d399;
   }
 
   body {
@@ -62,7 +66,7 @@ body {
   font: 17px/1.5 var(--font);
   color: var(--ink);
   background:
-    radial-gradient(880px 420px at 88% -8%, color-mix(in srgb, var(--signal) 20%, transparent), transparent 62%),
+    radial-gradient(880px 420px at 88% -8%, color-mix(in srgb, var(--sky) 26%, transparent), transparent 62%),
     var(--page);
   overflow-x: clip;
 }
@@ -186,14 +190,14 @@ a:hover { color: var(--signal); }
   padding: 0.44rem 0.95rem;
   border-radius: 999px;
   background: var(--signal);
-  color: #fffaf3;
+  color: var(--on-signal);
   font-weight: 600;
   letter-spacing: -0.01em;
   white-space: nowrap;
 }
 
 .nav .nav-cta:hover {
-  color: #fffaf3;
+  color: var(--on-signal);
   background: color-mix(in srgb, var(--signal) 86%, var(--ink));
 }
 
@@ -269,19 +273,6 @@ p:last-child { margin-bottom: 0; }
   padding: 3.5rem 0 3rem;
 }
 
-.eyebrow {
-  display: inline-block;
-  margin: 0 0 1.1rem;
-  padding: 0.34rem 0.8rem;
-  border: 1px solid color-mix(in srgb, var(--signal) 35%, transparent);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--signal) 10%, transparent);
-  color: var(--signal);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-}
-
 .proof {
   list-style: none;
   display: flex;
@@ -348,7 +339,7 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: 0.15rem;
   border-radius: 50%;
   background: var(--signal);
-  color: #fffaf3;
+  color: var(--on-signal);
   font-size: 0.85rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
@@ -614,11 +605,11 @@ p:last-child { margin-bottom: 0; }
 
 a.cta {
   background: var(--signal);
-  color: #fffaf3;
+  color: var(--on-signal);
 }
 
 a.cta:hover {
-  color: #fffaf3;
+  color: var(--on-signal);
   background: color-mix(in srgb, var(--signal) 86%, var(--ink));
 }
 
