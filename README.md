@@ -68,6 +68,22 @@ The header is sticky and carries the only button in the bar, so signup stays one
 scroll position. `--bar` in `styles.css` is that bar's height and feeds the `scroll-margin-top` on
 each section, so anchor jumps do not land under it. Changing one without the other hides headings.
 
+The header has no bottom rule, and that is now deliberate. It used to have a full-bleed one drawn by
+`.site-header::after` with `inset: auto 50% -1px` and `width: 100vw`. The three-value `inset`
+shorthand sets **both** `left` and `right` to 50%, and an absolutely positioned box with `left`,
+`right` and `width` all set is over-constrained, so in LTR the browser drops `right` and honours
+`left`. The rule therefore started at the viewport's right edge at every width and doubled the
+document: `scrollWidth` measured exactly 2x `clientWidth` on all three pages. Desktop hid it, because
+`body { overflow-x: clip }` clipped the excess; iOS Safari does not reliably honour that clip when it
+is propagated from `body` to the viewport, so on a phone the page scrolled sideways into empty space.
+It was removed rather than corrected, because it had never once been visible and removing it left
+desktop pixel-identical.
+
+Two things follow. Do not treat `body { overflow-x: clip }` as protection - it is a desktop-only
+safety net. And if a full-bleed rule is ever wanted back, write it as `left: 50%` with
+`transform: translateX(-50%)` and no `right` at all, then measure `scrollWidth` against
+`clientWidth` before shipping.
+
 Every claim on the page is unchanged from the previous version - see "Public claims that must stay
 true" below. No links, form targets, or `app.js` behaviour changed in this redesign.
 
