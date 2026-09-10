@@ -22,7 +22,7 @@ Two names here differ from watcher's `display_name` on purpose - do not "fix" ei
 - LayerZero Labs is listed under its full name; watcher says `LayerZero`.
 - Borealis AI is the name readers recognize; watcher says `RBC Borealis` (board `rbc-borealis`, RBC's Workday filtered to `Borealis`).
 
-Both divergences are visible to subscribers: the alert email carries watcher's `display_name` (watcher → `company_name` on the queue message → engine's subject line), so a role from that board arrives as "… — RBC Borealis" while this page says Borealis AI. The em dash inside those quotes is engine's, not ours, and is the one in this repo that must not be swept to a hyphen - see "Writing" below. Accepted trade-off, not a bug. Renaming on this page cannot change the email; only watcher can.
+Both divergences are visible to subscribers: the alert email carries watcher's `display_name` (watcher → `company_name` on the queue message → engine's subject line), so a role from that board arrives as "… — RBC Borealis" while this page says Borealis AI. Accepted trade-off, not a bug. Renaming on this page cannot change the email; only watcher can. The em dash inside that quotation is engine's, not ours, and is the one in this repo that must not be swept to a hyphen - see "Writing".
 
 Every other name matches watcher's `display_name` exactly - including seven that read like typos or look truncated and are not: `Layer 6`, whose space is watcher's and the lab's own; `Grafana Labs`, which is the `grafana` board's full `display_name`; `Tripadvisor`, whose lowercase "a" is watcher's and the company's own branding; `Flipp`, whose doubled "p" is the company's own spelling; `Fullscript`, which is one word with a lowercase "s"; `Movable Ink`, which has no second "e" (watcher's board token is `movableink`); and `Jane`, which is watcher's whole `display_name`, not a shortening of "Jane App". Do not close up "Layer6", shorten "Grafana", camel-case "TripAdvisor", drop a "p" from "Flip", split "Full Script", add an "e" to "Moveable Ink", or expand "Jane": each would make another divergence, silently.
 
@@ -119,9 +119,11 @@ applied across all three pages on 2026-09-09. The character tends to reappear in
 check them when editing: page `<title>` and `og:title` separators, "Term - definition" list items in
 `privacy.html`, the footer sponsorship line, and the mail specimen's subject line.
 
-That subject line is worth a second look. `.mail-subject` depicts a real alert, and engine builds the
-real subject as "Role - Company". If engine's separator is an em dash, this page now shows something
-the subscriber will not receive. Only engine can settle it; this site cannot.
+The last one is an open item, not a settled decision. `.mail-subject` depicts a real alert, and
+engine builds the real subject by joining role and company. The only evidence in this repo is the
+quotation under "Company list", which shows that separator as an em dash. If that is still what
+engine sends, the specimen now shows a subject subscribers will not receive. The specimen keeps the
+hyphen until someone reads engine; this site cannot change what engine sends either way.
 
 ## Privacy
 
