@@ -125,6 +125,29 @@ quotation under "Company list", which shows that separator as an em dash. If tha
 engine sends, the specimen now shows a subject subscribers will not receive. The specimen keeps the
 hyphen until someone reads engine; this site cannot change what engine sends either way.
 
+## Search metadata
+
+`<title>` and `<h1>` say different things on purpose. The `<h1>` speaks to someone already on the
+page ("Be first to know when a job opens."); the `<title>` is what a stranger reads in a results
+list, so it leads with the words they searched for ("New job alerts from top tech companies").
+Keep `og:title` and `twitter:title` equal to `<title>`, and all three descriptions equal, or a
+shared link and a search result will describe the site differently.
+
+Budgets: title at or under 60 characters, description at or under 158, or search engines truncate.
+Do not put the company count in either one - it would be a fifth place to hand-maintain the number,
+and the four in "Company list" are already easy to leave stale.
+
+A search result showing old wording is normally a stale index, not a bug. Check what is actually
+served (`curl -sS https://jobsub.app/ | grep '<title>'`) before changing anything. Only a recrawl
+clears it, and nothing in this repo can force one.
+
+## Mail specimen
+
+`.mail-subject` and the fields under it are illustrative, but the company must be one this site
+actually lists, or a reader can search for it and find it missing. It is Coinbase, which is also one
+of the five `FEATURED` names. The subject line has to stay equal to the role title joined to the
+company, since that is the shape engine sends.
+
 ## Privacy
 
 `privacy.html` is a description of behaviour. This site sets no cookies, runs no analytics, and embeds no third-party scripts, fonts, or trackers. First-party CSS/JS only. Company search runs in the browser.
